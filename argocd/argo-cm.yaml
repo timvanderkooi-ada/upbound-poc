@@ -30,6 +30,7 @@ data:
       - "apiregistration.k8s.io"
       - "admissionregistration.k8s.io"
       - "rbac.authorization.k8s.io"
+      - "secrets.crossplane.io"
       kinds:
       - "*"
       clusters:
