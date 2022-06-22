@@ -1,0 +1,16 @@
+apiVersion: aws.platformref.crossplane.io/v1alpha1
+kind: Cluster
+metadata:
+  name: cluster-created-by-argo
+spec:
+  id: cluster-created-by-argo
+  parameters:
+    nodes:
+      count: 1
+      size: small
+    services:
+      operators:
+        prometheus:
+          version: "34.5.1"
+  writeConnectionSecretToRef:
+    name: cluster-created-by-argo-kubeconfig
