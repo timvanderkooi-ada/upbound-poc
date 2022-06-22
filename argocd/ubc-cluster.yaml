@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ubc-secret
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: ubc
+  server: "https://proxy.upbound.io/controlPlanes/2b059cbf-1554-4e12-8595-f5bc651ecef2"
+  config: |
+    {
+      "bearerToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.                                                 eyJqdGkiOiI5YzU4ZjI5YS05YmM1LTRkZTItODQyZS01ZWUzYTUyODcyZTEiLCJzdWIiOiJ1c2VyfDE1MDIifQ.          IqGAA5EtGWQaELtyOxQDsBK3Np8_NefYysNgX0TWEJgqnKA0n9at-G-z_-                                       uJA9PNCxw0SD6cNKEEGnY2QstEA5rXxhUndXOyK9DQT26WWeA9MDroMsM2fWvJz6vrkYwF8plVko37GiYRN4UdTQEMar     e-DeRsq8KrfauzVsV0D7rp3AelmxQFVZm8B2Bfxr_n7OOMaYkYVkvFkNST-_D1SXWUhJdaIdAGyt-2udGAkrKxz5-        Nky7amp8rpbPWR5wkkCpXIW38JGvwiQ5XKIHtklqtkZ_i13Yw3_7a9PC5cZ1JS1vgBblM1cWcCPxF9au_kQHqRHiBu1Z     vkWTRe-8P2A",
+      "tlsClientConfig": {
+        "insecure": false,
+        "caData": ""
+      }
+    }
