@@ -44,12 +44,9 @@ spec:
     endpointPrivateAccess: false
     endpointPublicAccess: true
     subnetIds: # Update your subnet ids
-      - "subnet-0083123e40f348f82"
       - "subnet-0bfc56f3268286ca8"
       - "subnet-01112ce21aed8bb05"
       - "subnet-01054c4f15b71757f"
-      - "subnet-07e65be0612636482"
-      - "subnet-0fcca81446512df39"
   managedNodeGroups:
     minSize: 2
   writeConnectionSecretToRef:
