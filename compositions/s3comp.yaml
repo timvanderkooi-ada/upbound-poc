@@ -3,7 +3,7 @@ kind: Composition
 metadata:
   name: secure-s3-bucket
   labels: 
-    crossplane.io/xrd: xs3.bucket.ada.support
+    crossplane.io/xrd: xs3buckets.bucket.ada.support
     ada.support/environment: dev
 spec:
   writeConnectionSecretsToNamespace: upbound-system
