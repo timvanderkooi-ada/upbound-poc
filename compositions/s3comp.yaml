@@ -1,0 +1,32 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: secureS3Bucket
+  labels: 
+    crossplane.io/xrd: xs3.bucket.ada.support
+spec:
+  writeConnectionSecretsToNamespace: upbound-system
+  compositeTypeRef:
+    apiVersion: s3.ada.support/v1alpha1
+    kind: XS3Bucket
+  resources:
+  - name: s3bucket
+    base:
+      apiVersion: s3.aws.crossplane.io/v1beta1
+      kind: Bucket
+      spec:
+        deletionPolicy: Delete
+        forProvider:
+          locationConstraint: us-east-1
+          acl: private
+        providerConfigRef:
+          name: default
+    patches:
+    - type: FromCompositeFieldPath
+      fromFieldPath: spec.parameters.bucketName
+      toFieldPath: metadata.annotations.crossplane.io/external-name
+    - type: FromCompositeFieldPath
+      fromFieldPath: spec.parameters.bucketName
+      toFieldPath: metadata.name
+
+
