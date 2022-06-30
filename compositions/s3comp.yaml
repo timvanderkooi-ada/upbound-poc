@@ -20,6 +20,8 @@ spec:
         forProvider:
           locationConstraint: us-east-1
           acl: private
+          tags:
+            provisionedBy: Crossplane
         providerConfigRef:
           name: default
     patches:
