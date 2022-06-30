@@ -8,7 +8,7 @@ metadata:
 spec:
   writeConnectionSecretsToNamespace: upbound-system
   compositeTypeRef:
-    apiVersion: s3.ada.support/v1alpha1
+    apiVersion: bucket.ada.support/v1alpha1
     kind: XS3Bucket
   resources:
   - name: s3bucket

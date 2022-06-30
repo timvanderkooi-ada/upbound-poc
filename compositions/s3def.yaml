@@ -3,7 +3,7 @@ kind: CompositeResourceDefinition
 metadata:
   name: xs3.bucket.ada.support
 spec:
-  group: s3.ada.support
+  group: bucket.ada.support
   names:
     kind: XS3Bucket
     plural: xs3buckets
