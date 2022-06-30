@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xs3.bucket.ada.support
+  name: xs3sbuckets.bucket.ada.support
 spec:
   group: bucket.ada.support
   names:
