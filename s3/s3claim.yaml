@@ -1,0 +1,11 @@
+apiVersion: s3.ada.support/v1alpha1
+kind: S3Bucket
+metadata:
+  name: my-test-s3-bucket-claim
+  namespace: default
+spec:
+  compositionSelector:
+    matchLabels:
+      ada.support/environment: dev
+  parameters:
+    bucketName: ada-tim-bucket-claim
