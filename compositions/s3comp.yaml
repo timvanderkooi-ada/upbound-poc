@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: secureS3Bucket
+  name: secure-s3-bucket
   labels: 
     crossplane.io/xrd: xs3.bucket.ada.support
 spec:
