@@ -33,29 +33,29 @@ spec:
         providerConfigRef:
           name: default
       patches:
-      - type: FromCompositeFieldPath
-        fromFieldPath: spec.parameters.bucketName
-        toFieldPath: metadata.annotations.crossplane.io/external-name
-      - type: FromCompositeFieldPath
-        fromFieldPath: spec.parameters.bucketName
-        toFieldPath: metadata.name
-      - type: FromCompositeFieldPath
-        fromFieldPath: status.kms.arn
-        toFieldPath: spec.forProvider.serverSideEncryptionConfiguration.rules.applyServerSideEncryptionByDefault.kmsMasterKeyId
-    - name: kmskey
-      base:
-        apiVersion: kms.aws.crossplane.io/v1alpha1
-        kind: Key
-        spec:
-          deletionPolicy: Delete
-          forProvider:
-            region: us-east-1
-            tags:
-              - tagKey: provisionedBy
-                tagValue: Crossplane
-          providerConfigRef:
-            name: default
-      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.bucketName
+          toFieldPath: metadata.annotations.crossplane.io/external-name
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.bucketName
+          toFieldPath: metadata.name
+        - type: FromCompositeFieldPath
+          fromFieldPath: status.kms.arn
+          toFieldPath: spec.forProvider.serverSideEncryptionConfiguration.rules.applyServerSideEncryptionByDefault.kmsMasterKeyId
+  - name: kmskey
+    base:
+      apiVersion: kms.aws.crossplane.io/v1alpha1
+      kind: Key
+      spec:
+        deletionPolicy: Delete
+        forProvider:
+          region: us-east-1
+          tags:
+            - tagKey: provisionedBy
+              tagValue: Crossplane
+        providerConfigRef:
+          name: default
+    patches:
       - type: ToCompositeFieldPath
         fromFieldPath: status.atProvider.arn
         toFieldPath: status.kms.arn
