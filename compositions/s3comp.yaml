@@ -22,8 +22,10 @@ spec:
           acl: private
           tagging:
             tagSet:
-            - key: provisionedBy
-              value: Crossplane
+              - key: provisionedBy
+                value: Crossplane
+              - key: Owner
+                value: vanderkooi
         providerConfigRef:
           name: default
     patches:
