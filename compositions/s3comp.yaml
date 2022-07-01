@@ -41,7 +41,7 @@ spec:
         toFieldPath: metadata.name
       - type: FromCompositeFieldPath
         fromFieldPath: status.kms.arn
-        toFieldPath: spec.forProvider.serverSideEncryptionConfiguration.rules[0].applyServerSideEncryptionByDefault.kmsMasterKeyId
+        toFieldPath: spec.forProvider.serverSideEncryptionConfiguration.rules.applyServerSideEncryptionByDefault.kmsMasterKeyId
     - name: kmskey
       base:
         apiVersion: kms.aws.crossplane.io/v1alpha1
