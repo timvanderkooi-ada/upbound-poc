@@ -22,7 +22,7 @@ spec:
           acl: private
           tagging:
             tagSet:
-              key: provisionedBy
+            - key: provisionedBy
               value: Crossplane
         providerConfigRef:
           name: default
